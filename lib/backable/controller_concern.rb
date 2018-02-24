@@ -42,8 +42,8 @@ module Backable
 
 
     def backable_push(path)
-      path = polymorphic_path(path) if !path.kind_of?( String )
-      backable_future << "#{path}"
+      #path = polymorphic_path(path) if !path.kind_of?( String )
+      backable_future.push("#{path}")
     end
 
 
