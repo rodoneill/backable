@@ -34,7 +34,7 @@ module Backable
 
     def backable_back_path( fallback=nil )
       back = backable_history.last
-      fallback = Rails.env.development? ? "http://watbenjedan.nl/" : :back
+      fallback = :back
       return fallback unless back
       back_param = backable_param( backable_history[0..-2] ) 
       back.index('?') ? "#{back}&back=#{CGI::escape(back_param)}" : "#{back}?back=#{CGI::escape(back_param)}"
